@@ -8,6 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <script>
+    // Load api tất cả sản phẩm
     function F1()
     {
         $.ajax (
@@ -35,6 +36,8 @@
             }
         );
     }
+    
+    // api xóa sản phẩm
     function xoa(id)
     {
         $.ajax (
@@ -54,6 +57,8 @@
             }
         );
     }
+    
+    // api Thêm sản phẩm mớimới
     function taomoi() {
         var dataProduct = new Object();
 
@@ -86,25 +91,25 @@
         );
     }
 
-    function sua(id) {
-        $.ajax (
-            {
-                url: 'https://62135e4cf43692c9c601f543.mockapi.io/product/'+id,
-                type: 'GET',  //mac dinh GET
-                dataType: 'json', //mac dinh text
-                //data: val(),
-                //neu thanh cong, xu ly ket qua tra ve la dataReturn
-                success:function(dataReturn)
-                {
-                    console.log(dataReturn);
-                    $.each(dataReturn, function(k, v) {
-                        $('#name').content('${v.name}');
-                        $('#price').content('${v.price}');
-                    });
-                }
-            }
-        );
-    }
+//     function sua(id) {
+//         $.ajax (
+//             {
+//                 url: 'https://62135e4cf43692c9c601f543.mockapi.io/product/'+id,
+//                 type: 'GET',  //mac dinh GET
+//                 dataType: 'json', //mac dinh text
+//                 //data: val(),
+//                 //neu thanh cong, xu ly ket qua tra ve la dataReturn
+//                 success:function(dataReturn)
+//                 {
+//                     console.log(dataReturn);
+//                     $.each(dataReturn, function(k, v) {
+//                         $('#name').content('${v.name}');
+//                         $('#price').content('${v.price}');
+//                     });
+//                 }
+//             }
+//         );
+//     }
 
     </script>
 <body>
