@@ -1,5 +1,4 @@
-# Baitap-xdpmweb
-Bài tập 1
+# Bài tập 1
 
 link website: https://tqminh0907.github.io/Baitap-xdpmweb/Bai1/
 
