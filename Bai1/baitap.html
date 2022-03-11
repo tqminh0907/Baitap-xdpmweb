@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<script>
+    function F1()
+    {
+        $.ajax (
+            {
+                url: 'https://62135e4cf43692c9c601f543.mockapi.io/product',
+                type: 'GET',  //mac dinh GET
+                dataType: 'json', //mac dinh text
+                //data: val(),
+                //neu thanh cong, xu ly ket qua tra ve la dataReturn
+                success:function(dataReturn)
+                {
+                    console.log(dataReturn);
+                    $.each(dataReturn, function(k, v) {
+                        var s = `<div id="pro${v.id}" style="background:#CCC; width:200px; padding:5px; margin: 5px">
+                                    Product name: 
+                                    <p>${v.name}</p>
+                                    <p>price: ${v.price} $</p>
+                                    <button  onClick="xoa(${v.id})">Xoa</button>
+                                    <button  onClick="sua(${v.id})">Sua</button>
+                                <div>
+                            `;
+                        $('#root').append(s);
+                    });
+                }
+            }
+        );
+    }
+    function xoa(id)
+    {
+        $.ajax (
+            {
+                url: 'https://62135e4cf43692c9c601f543.mockapi.io/product/'+id,
+                type: 'DELETE',  //mac dinh GET
+                dataType: 'json', //mac dinh text
+                //data: val(),
+                //neu thanh cong, xu ly ket qua tra ve la dataReturn
+                success:function(dataReturn)
+                {
+                    console.log(dataReturn);
+                    $.each(dataReturn, function(k, v) {
+                        $('#pro' + id).css('display','none');
+                    });
+                }
+            }
+        );
+    }
+    function taomoi() {
+        var dataProduct = new Object();
+
+        dataProduct.name = $('#name').val();
+        dataProduct.price = $('#price').val();
+        
+        $.ajax (
+            {
+                url: 'https://62135e4cf43692c9c601f543.mockapi.io/product/',
+                type: 'POST',  //mac dinh GET
+                dataType: 'json', //mac dinh text
+                data: dataProduct,
+                // neu thanh cong, xu ly ket qua tra ve la dataReturn
+                success:function(dataReturn)
+                {
+                    console.log(dataReturn);
+                    $.each(dataReturn, function(k, v) {
+                        var s = `<div id="pro${v.id}" style="background:#CCC; padding:5px; margin: 5px; display:block;">
+                                    Product name: 
+                                    <p>${v.name}</p>
+                                    <p>price: ${v.price} $</p>
+                                    <button  onClick="xoa(${v.id})">Xoa</button>
+                                    <button  onClick="sua(${v.id})">Sua</button>
+                                <div> 
+                            `;
+                        $('#root').append(s);
+                    });
+                }
+            }
+        );
+    }
+
+    function sua(id) {
+        $.ajax (
+            {
+                url: 'https://62135e4cf43692c9c601f543.mockapi.io/product/'+id,
+                type: 'GET',  //mac dinh GET
+                dataType: 'json', //mac dinh text
+                //data: val(),
+                //neu thanh cong, xu ly ket qua tra ve la dataReturn
+                success:function(dataReturn)
+                {
+                    console.log(dataReturn);
+                    $.each(dataReturn, function(k, v) {
+                        $('#name').content('${v.name}');
+                        $('#price').content('${v.price}');
+                    });
+                }
+            }
+        );
+    }
+
+    </script>
+<body>
+    <div id="root" style="display: flex;">
+        
+    </div>
+    <script>window.onLoad = F1()</script>
+
+    <div style="background-color:beige; display: block; align-items:center">
+        <h1>Form Them/Sua</h1>
+        <form>
+            name:  <input type="text" name="name" id="name"><br>
+            price: <input type="number" name="price" id="price"><br>
+            <input type="submit" onClick="taomoi()" value="Save">
+        </form>
+    </div>
+</body>
+</html>
