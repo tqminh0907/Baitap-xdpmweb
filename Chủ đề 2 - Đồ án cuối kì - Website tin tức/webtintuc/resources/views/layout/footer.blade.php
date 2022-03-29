@@ -1,4 +1,4 @@
-<div class="footer">
+<div class="footer text-light" style="background-color: #4643D0">
     <div class="container">
         <div class="menu__footer">
             <div class="row">
@@ -22,14 +22,14 @@
                     <div class="nav__menu--footer">
                         <span class="footer__title">Hướng dẫn</span>
                         <ul class="sub__menu">
-                            <li class="item__menu"><a href="">Trang chủ</a></li>
-                            <li class="item__menu"><a href="">Giới thiệu</a></li>
-                            <li class="item__menu"><a href="">Tin tức</a></li>
-                            <li class="item__menu"><a href="">Cơ hội hợp tác</a></li>
-                            <li class="item__menu"><a href="">Lịch sự kiện</a></li>
-                            <li class="item__menu"><a href="">Quốc gia</a></li>
-                            <li class="item__menu"><a href="">Đào tạo</a></li>
-                            <li class="item__menu"><a href="">Liên hệ</a></li>
+                            <li class="item__menu"><a class="text-light" href="">Trang chủ</a></li>
+                            <li class="item__menu"><a class="text-light" href="">Giới thiệu</a></li>
+                            <li class="item__menu"><a class="text-light" href="">Tin tức</a></li>
+                            <li class="item__menu"><a class="text-light" href="">Cơ hội hợp tác</a></li>
+                            <li class="item__menu"><a class="text-light" href="">Lịch sự kiện</a></li>
+                            <li class="item__menu"><a class="text-light" href="">Quốc gia</a></li>
+                            <li class="item__menu"><a class="text-light" href="">Đào tạo</a></li>
+                            <li class="item__menu"><a class="text-light" href="">Liên hệ</a></li>
                         </ul>
                     </div>
 
@@ -38,14 +38,14 @@
                     <div class="nav__menu--footer">
                         <span class="footer__title">Chính sách</span>
                         <ul class="sub__menu">
-                            <li class="item__menu"><a href="">Trang chủ</a></li>
-                            <li class="item__menu"><a href="">Giới thiệu</a></li>
-                            <li class="item__menu"><a href="">Tin tức</a></li>
-                            <li class="item__menu"><a href="">Cơ hội hợp tác</a></li>
-                            <li class="item__menu"><a href="">Lịch sự kiện</a></li>
-                            <li class="item__menu"><a href="">Quốc gia</a></li>
-                            <li class="item__menu"><a href="">Đào tạo</a></li>
-                            <li class="item__menu"><a href="">Liên hệ</a></li>
+                            <li class="item__menu"><a class="text-light" href="">Trang chủ</a></li>
+                            <li class="item__menu"><a class="text-light" href="">Giới thiệu</a></li>
+                            <li class="item__menu"><a class="text-light" href="">Tin tức</a></li>
+                            <li class="item__menu"><a class="text-light" href="">Cơ hội hợp tác</a></li>
+                            <li class="item__menu"><a class="text-light" href="">Lịch sự kiện</a></li>
+                            <li class="item__menu"><a class="text-light" href="">Quốc gia</a></li>
+                            <li class="item__menu"><a class="text-light" href="">Đào tạo</a></li>
+                            <li class="item__menu"><a class="text-light" href="">Liên hệ</a></li>
                         </ul>
                     </div>
                 </div>
@@ -68,6 +68,6 @@
     </div>
     <div class="copyright">
         <i class="fa fa-copyright" aria-hidden="true"></i>
-        Bản quyền thuộc về <a target="_blank" href="{{ ($about != null) ? $about['linkcopyright'] : '#' }}">{!!$about["copyright"]!!}</a> | Cung cấp bởi <a href="{!!$about['linkcopyright']!!}">{!!$about["copyright"]!!}</a>
+        Bản quyền thuộc về <a class="text-warning" target="_blank" href="{{ ($about != null) ? $about['linkcopyright'] : '#' }}">{!!$about["copyright"]!!}</a> | Cung cấp bởi <a class="text-warning" href="{!!$about['linkcopyright']!!}">{!!$about["copyright"]!!}</a>
     </div>
 </div>

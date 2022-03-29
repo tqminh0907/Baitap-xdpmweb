@@ -145,14 +145,14 @@ class NewsController extends Controller
 
     //* bật active
     public function postActive($id) {
-        News::find($id)->update(['active' => 1]);
+        News::where('id', $id)->update(['active' => 1]);
 
         return redirect('admin/news/list')->with('thongbao','Update thành công');
     }
 
     //* tắt active
     public function postNoActive($id) {
-        News::find($id)->update(['active' => 0]);
+        News::where('id', $id)->update(['active' => 0]);
         
         return redirect('admin/news/list')->with('thongbao','Update thành công');
     }

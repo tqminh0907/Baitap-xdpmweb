@@ -49,7 +49,7 @@
                     </div>
                     <ul>
                         @foreach ($tinlienquan as $value)
-                        <li><a class="blog__title blog__title--hover" href="">{!! $value['title'] !!}</a></li>
+                        <li><a class="blog__title blog__title--hover" href="/news/{!! $value['id'] !!}_{!! $value['sort_title'] !!}.html">{!! $value['title'] !!}</a></li>
                         @endforeach
                     </ul>
                 </div>

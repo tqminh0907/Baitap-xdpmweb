@@ -35,7 +35,7 @@
 									<a href="#" class="social-icon d-flex align-items-center justify-content-center"><span class="fa fa-twitter"></span></a>
 								</p>
 							</div>
-				</div>
+					</div>
 						<form action="/login"  method="POST">
 							@csrf
 							@if(count($errors) > 0)
@@ -46,9 +46,9 @@
 							</div>
 							@endif
 							@if (session('thongbao'))
-								<div class="alert alert-success">
-									{{ session('thongbao') }}
-								</div>
+							<div class="alert alert-success">
+								{{ session('thongbao') }}
+							</div>
 								
 							@endif
 							<div class="form-group mb-3">

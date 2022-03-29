@@ -32,7 +32,7 @@ class SubcategoryController extends Controller
     public function postCreate(Request $request)
     {
         $request->validate([
-            'name' => 'required|unique:Subcategories|min:1',
+            'name' => 'required|unique:subcategories|min:1',
             'category_id' => 'required'
         ], [
             'category_id.required' => 'Vui lòng chọn Category',

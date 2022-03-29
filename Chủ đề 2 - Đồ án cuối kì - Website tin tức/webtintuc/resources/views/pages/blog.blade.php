@@ -3,7 +3,6 @@
 @section('content')
 <section class="content__news">
     <div class="list__items--contents">
-       
         @foreach ($news as $value)
         <div class="item__news">
             <div class="image__news">
@@ -23,6 +22,8 @@
         </div>
         @endforeach
     </div>
-    {{ $news->links() }}
+    <div class="d-inline-flex w-100 h-100">
+        {{ $news->links() }} 
+    </div>
 </section>
 @endsection

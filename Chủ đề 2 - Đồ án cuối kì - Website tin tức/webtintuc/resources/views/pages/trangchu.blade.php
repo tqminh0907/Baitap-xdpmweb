@@ -127,7 +127,7 @@
                                 <a class="blog__title blog__title--hover" href="/news/{!! $news['id'] !!}_{!! $news['sort_title'] !!}.html">
                                     {!! $news['title'] !!}
                                 </a>
-                                <p class="content__news--details">
+                                <p class="content__news--details news__content">
                                     {!! $news['summary'] !!}
                                 </p>
                                 <span class="news__time">{{ $news['created_at']->format('d/m/Y H:i') }}</span>
@@ -174,18 +174,18 @@
         </div>
     </div>
 </section>
-<section class="section__advisory">
-    <div class="container">
-        <div class="advisory__content">
-            <h2 class="advisory__content--title_1">
-                Chúng tôi sẵn sàng giúp đỡ bạn
-                <p class="advisory__content--title_2">
-                    Tư vấn miễn phí
-                </p>
-                <a class="button__register button__register--hover" href="#">
-                    Đăng kí
-                </a>
-        </div>
-    </div>
-</section>
+<!--<section class="section__advisory">-->
+<!--    <div class="container">-->
+<!--        <div class="advisory__content">-->
+<!--            <h2 class="advisory__content--title_1">-->
+<!--                Chúng tôi sẵn sàng giúp đỡ bạn-->
+<!--                <p class="advisory__content--title_2">-->
+<!--                    Tư vấn miễn phí-->
+<!--                </p>-->
+<!--                <a class="button__register button__register--hover" href="#">-->
+<!--                    Đăng kí-->
+<!--                </a>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--</section>-->
 @endsection

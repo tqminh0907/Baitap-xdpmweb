@@ -25,7 +25,7 @@ class UserController extends Controller
             'name' => 'required|min:1',
             'email' => 'required|unique:users,email',
             'username' => 'required|min:1|max:255|unique:users,username',
-            'password' => 'required|min:6|max:32',
+            'password' => 'required|min:5|max:32',
             'passwordagain' => 'required|same:password',
             'role' => 'required',
             'active' => 'required'
@@ -39,8 +39,8 @@ class UserController extends Controller
             'username.max' => 'username hợp lệ từ 1-255 kí tự',
             'username.unique' => 'username đã tồn tại',
             'password.required' => 'Vui lòng nhập mật khẩu',
-            'password.min' => 'Mật khẩu hợp lệ từ 6-32 kí tự',
-            'password.max' => 'Mật khẩu hợp lệ từ 6-32 kí tự',
+            'password.min' => 'Mật khẩu hợp lệ từ 5-32 kí tự',
+            'password.max' => 'Mật khẩu hợp lệ từ 5-32 kí tự',
             'passwordagain.required' => 'Vui lòng nhập lại mật khẩu',
             'passwordagain.same' => 'Mật khẩu không trùng nhau'
         ]);

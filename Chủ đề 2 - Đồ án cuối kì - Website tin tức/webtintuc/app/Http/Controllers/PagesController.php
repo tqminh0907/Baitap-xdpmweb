@@ -16,12 +16,13 @@ class PagesController extends Controller
 {
     //* khởi tạo dữ liệu ban đầu
     function __construct() {
-        $banner = Banner::all();
         $category = Category::all();
+        $banner = Banner::all();
         $subcategory = Subcategory::all();
         $about = About::find(1);
         $baivietmoinhat = News::get()->where('type', 1)->where('active', 1)->sortByDesc('created_at')->take(4);
-        $baivietnoibat = News::get()->where('type', 1)->where('index', 1)->where('active', 1)->sortByDesc('created_at')->take(4);
+        // $baivietnoibat = News::get()->where('type', 1)->where('index', 1)->where('active', 1)->sortByDesc('created_at')->take(4);
+        $baivietnoibat = News::get()->random(4);
         view()->share('baivietnoibat', $baivietnoibat);
         view()->share('baivietmoinhat', $baivietmoinhat);
         view()->share('banner', $banner);
@@ -46,7 +47,7 @@ class PagesController extends Controller
 
     //* trang blog
     public function blog() {
-        $news = News::where('type', 1)->where('active', 1)->orderby('created_at', 'DESC')->paginate(5);
+        $news = News::where('type', 1)->where('active', 1)->orderby('created_at', 'DESC')->simplePaginate(5);
         $name = 'Blog';
         return view('pages.blog', [
             'name' => $name,
@@ -56,7 +57,7 @@ class PagesController extends Controller
 
     //* trang video
     public function video() {
-        $news = News::where('type', 0)->where('active', 1)->orderby('created_at', 'DESC')->paginate(5);
+        $news = News::where('type', 0)->where('active', 1)->orderby('created_at', 'DESC')->simplePaginate(5);
         $name = 'Video';
         return view('pages.blog', [
             'name' => $name,
